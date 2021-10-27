@@ -1,4 +1,4 @@
-package chess;
+package ru.vsu.cs.ostroverkhov.chess;
 
 
 public class Move {
@@ -12,7 +12,7 @@ public class Move {
 		this.x2 = x2;
 		this.y2 = y2;
 	}
-	
+
 	public Move(int x1, int y1, int x2, int y2, boolean castling) {
 		this.x1 = x1;
 		this.y1 = y1;
@@ -52,23 +52,22 @@ public class Move {
 	public void setY2(int y2) {
 		this.y2 = y2;
 	}
-	
+
 	public boolean isCastling() {
 		return castling;
 	}
-	
-	public String toString(){
 
-		return (char)('A'+x1) + "" + (y1+1) + " " + (char)('A'+x2) + "" + (y2+1);
+	public String toString() {
+
+		return (char) ('A' + x1) + "" + (y1 + 1) + " " + (char) ('A' + x2) + "" + (y2 + 1);
 	}
-	
-	public boolean equals(Object o){
+
+	public boolean equals(Object o) {
 		Move op = (Move) o;
-		
-		if(op.getX1() == x1 && op.getY1() == y1 && op.getX2() == x2 && op.getY2() == y2){
+
+		if (op.getX1() == x1 && op.getY1() == y1 && op.getX2() == x2 && op.getY2() == y2) {
 			return true;
-		}
-		else
+		} else
 			return false;
 	}
 }

@@ -1,11 +1,12 @@
-package chess;
+package ru.vsu.cs.ostroverkhov.chess;
 
-import chess.player.*;
-import chess.pieces.*;
+import ru.vsu.cs.ostroverkhov.chess.pieces.Piece;
+import ru.vsu.cs.ostroverkhov.chess.player.Player;
+import ru.vsu.cs.ostroverkhov.chess.player.RandomPlayer;
 
 
 public class Chess {
-	
+
 	public static void main(String[] args) {
 		int iterator = 3;
 		float player1Score = 0, player2Score = 0;
@@ -38,7 +39,7 @@ public class Chess {
 		int result;
 		int turn = 0;
 		while (true) {
-			if (turn++ > 250) {
+			if (turn++ > 300) {
 				return 0;
 			}
 
@@ -50,8 +51,8 @@ public class Chess {
 
 			result = b.makeMove(move);
 			System.out.println(b);
-			if (result == -1) return (player1.getColor() == Piece.BLACK) ? -1 : 1; // black wins
-			if (result == 1) return (player1.getColor() == Piece.WHITE) ? 1 : -1; // white wins
+			if (result == -1) return (player1.getColor() == Piece.BLACK) ? -1 : 1;
+			if (result == 1) return (player1.getColor() == Piece.WHITE) ? 1 : -1;
 
 
 			move = player2.getNextMove(b);
@@ -62,8 +63,8 @@ public class Chess {
 
 			result = b.makeMove(move);
 			System.out.println(b);
-			if(result == -1) return (player1.getColor() == Piece.BLACK) ? 1 : -1; // black wins
-			if(result == 1) return (player1.getColor() == Piece.WHITE) ? -1 : 1; // white wins
+			if (result == -1) return (player1.getColor() == Piece.BLACK) ? 1 : -1;
+			if (result == 1) return (player1.getColor() == Piece.WHITE) ? -1 : 1;
 
 		}
 	}
